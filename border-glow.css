@@ -28,7 +28,6 @@ body{
     align-items: center;
     border-radius: 50px;
     position: relative;
-    z-index: 5;
 }
 .RGB::after{
     content: '';
@@ -50,7 +49,6 @@ body{
   filter: blur(7px);
   border-radius: 70px;
   opacity: 10%;
-  z-index: 0;
 }
 
 .RGB-2{
@@ -63,7 +61,6 @@ body{
     align-items: center;
     border-radius: 50px;
     position: relative;
-    z-index: 5;
 }
 .RGB-2::after{
     content: '';
@@ -81,12 +78,11 @@ body{
   content: "";
   position: absolute;
   inset: 0;
-  filter: blur(1.5px);
+  filter: blur(4px);
   background: linear-gradient(#252525, rgb(9, 9, 9));
   border-radius: 60px;
   mix-blend-mode: multiply;
-  opacity: 90%;
-  z-index: 0;
+  opacity: 70%;
 }
 
 
@@ -94,7 +90,6 @@ h2 {
     font-size: 40pt;
     text-transform: uppercase;
     font-weight: 500;
-    z-index: 5;
 }
 .gradient-h2{
   background: linear-gradient(120deg, red, yellow, green);
@@ -111,7 +106,6 @@ h2 {
   right: 0;
   translate: -0% -0%;
   justify-self: center;
-  z-index: -5;
   align-self: center;
   filter: blur(2rem);
   opacity: 100%;
