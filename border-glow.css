@@ -19,14 +19,14 @@ body{
     background-color: black;
 }
 .RGB{
-    background-image: transparent;
     display: flex;
+    background-color: wheat 0%;
+    border-radius: 50px;
     width: 250px;
     height: 250px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border-radius: 50px;
     position: relative;
 }
 .RGB::after{
@@ -38,7 +38,7 @@ body{
     border-radius: 50px;
     padding: 0px;
     background-image: conic-gradient(from var(--angle), red, yellow, green, red);
-    filter: blur(2rem);
+    filter: blur(15px);
     animation: 6s spin linear infinite;
 }
 .RGB::before {
@@ -79,10 +79,9 @@ body{
   position: absolute;
   inset: 0;
   filter: blur(4px);
-  background: linear-gradient(#252525, rgb(9, 9, 9));
+  background: linear-gradient(#000000);
   border-radius: 60px;
-  mix-blend-mode: multiply;
-  opacity: 70%;
+  opacity: 40%;
 }
 
 
