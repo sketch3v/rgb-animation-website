@@ -12,7 +12,7 @@
 }
 @property --blur {
   syntax: "<length>";
-  initial-value: 0rem;
+  initial-value: 0.5rem;
   inherits: false;
 }
 body{
@@ -22,38 +22,6 @@ body{
     align-items: center;
     justify-content: center;
     background-color: black;
-}
-.RGB{
-    display: flex;
-    background-color: rgb(231, 231, 231, 0.0);
-    border-radius: 50px;
-    width: 250px;
-    height: 250px;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-.RGB::after{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    border-radius: 50px;
-    padding: 0px;
-    background-image: conic-gradient(from var(--angle), red, yellow, green, red);
-    filter: blur(15px);
-    animation: 6s spin linear infinite;
-}
-.RGB::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(white);
-  filter: blur(7px);
-  border-radius: 70px;
-  opacity: 10%;
 }
 
 .RGB-2{
@@ -66,6 +34,8 @@ body{
     align-items: center;
     border-radius: 50px;
     position: relative;
+    cursor: pointer;
+
 }
 .RGB-2::after{
     content: '';
@@ -76,53 +46,48 @@ body{
     border-radius: 50px;
     padding: 0px;
     background-image: conic-gradient(from var(--angle), red, yellow, green, red);
-    filter: blur(2rem);
+    filter: blur(2.5rem);
     animation: 6s spin linear infinite;
+ 
 }
 .RGB-2::before {
   content: "";
   position: absolute;
   inset: 0;
-  filter: blur(4px);
-  background: linear-gradient(#000000);
+  filter: blur(9px);
+  background-image: conic-gradient(from var(--angle), black, gray, gray, black);
   border-radius: 60px;
-  opacity: 40%;
+  mix-blend-mode: overlay;
+  opacity: 75%;
+  animation: 10s spin linear infinite;
 }
 
 
 h2 {
-    font-size: 40pt;
+    font-size: 42pt;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
+    mix-blend-mode: normal;
+    color: white;
+    text-align: center;
+    line-height: 1;
 }
+
 .gradient-h2{
-  background: linear-gradient(120deg, red, yellow, green);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   position: relative;
-  animation: blurGrow 5s ease-in-out infinite;
-  
-}
-.gradient-h2::before {
-  content: attr(data-text); /* mirrors the text */
-  position: absolute;
-  width: 100%;
-  height: 70%;
   display: flex;
-  right: 0;
-  translate: -0% -0%;
-  justify-self: center;
-  align-self: center;
-  filter: blur(2rem);
-  opacity: 90%;  
+  align-content: center;
+  justify-content: center;
+  mix-blend-mode: overlay;
+  animation: blurGrow 5s ease-in-out infinite;
 }
-
-
-
+.gradient-h2 img{
+    width: 60%;
+}
 p{
     font-size: 20pt;
-    color: rgb(255, 255, 255);
-    opacity: 80%;
+    color: white;
+    mix-blend-mode: overlay;
     animation: blurGrow 5s ease-in-out infinite;
 }
 @keyframes spin{
@@ -134,9 +99,9 @@ p{
     }
 }
 @keyframes blurGrow {
-  0%   { filter: blur(0.01rem); }
-  50%  { filter: blur(0.3rem); }
-  100% { filter: blur(0.01rem); }
+  0%   { filter: blur(0.05rem); }
+  50%  { filter: blur(0.1rem); }
+  100% { filter: blur(0.05rem); }
 }
 @media(max-width:1000px){
     body{
